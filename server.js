@@ -21,8 +21,11 @@ const knex = require('knex')({
 
 
 const app = express();
-app.use(bodyParser.json());
-app.use(cors())
+// app.use(bodyParser.json());
+// app.use(cors())
+
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 
 app.get('/', (req, res) =>{
